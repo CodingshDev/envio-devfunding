@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-devfunding
+contracts:
+- name: devFunding
+  handler: src/EventHandlers.ts
+  events:
+  - event: BountyContribution(uint256 indexed bountyId, address indexed contributor, uint256 indexed amount)
+  - event: BountyCreated(uint256 indexed bountyId, address indexed creator, uint256 amount, string issueLink, uint256 indexed deadline, address referrer)
+  - event: DevProfileCreated(address indexed developer, string githubHandle)
+  - event: DisputeRaised(uint256 indexed id, address indexed raisedBy)
+  - event: DisputeResolved(uint256 indexed id, string indexed outcome)
+  - event: GrantClaimed(uint256 indexed grantId, address indexed developer)
+  - event: GrantCreated(uint256 indexed grantId, address indexed creator, uint256 amount)
+  - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+  - event: PlatformFeeCollected(uint256 indexed amount)
+  - event: PremiumPurchased(address indexed user, uint256 indexed duration)
+  - event: ReferralPaid(address indexed referrer, address indexed referred, uint256 indexed amount)
+  - event: Voted(uint256 indexed id, address indexed voter, bool indexed vote)
+networks:
+- id: 2810
+  start_block: 0
+  contracts:
+  - name: devFunding
+    address:
+    - 0xD0B6fa2ad5E8499cf2Efee8Ed8414Be83162fe2B
+- id: 2818
+  start_block: 0
+  contracts:
+  - name: devFunding
+    address:
+    - 0x5de932BD252DD79231C9eDB5F2e30D488B785109
+rollback_on_reorg: false

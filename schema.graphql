@@ -1,0 +1,79 @@
+type DevFunding_BountyContribution {
+  id: ID!
+  bountyId: BigInt!
+  contributor: String!
+  amount: BigInt!
+}
+
+type DevFunding_BountyCreated {
+  id: ID!
+  bountyId: BigInt!
+  creator: String!
+  amount: BigInt!
+  issueLink: String!
+  deadline: BigInt!
+  referrer: String!
+}
+
+type DevFunding_DevProfileCreated {
+  id: ID!
+  developer: String!
+  githubHandle: String!
+}
+
+type DevFunding_DisputeRaised {
+  id: ID!
+  event_id: BigInt!
+  raisedBy: String!
+}
+
+type DevFunding_DisputeResolved {
+  id: ID!
+  event_id: BigInt!
+  outcome: String!
+}
+
+type DevFunding_GrantClaimed {
+  id: ID!
+  grantId: BigInt!
+  developer: String!
+}
+
+type DevFunding_GrantCreated {
+  id: ID!
+  grantId: BigInt!
+  creator: String!
+  amount: BigInt!
+}
+
+type DevFunding_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type DevFunding_PlatformFeeCollected {
+  id: ID!
+  amount: BigInt!
+}
+
+type DevFunding_PremiumPurchased {
+  id: ID!
+  user: String!
+  duration: BigInt!
+}
+
+type DevFunding_ReferralPaid {
+  id: ID!
+  referrer: String!
+  referred: String!
+  amount: BigInt!
+}
+
+type DevFunding_Voted {
+  id: ID!
+  event_id: BigInt!
+  voter: String!
+  vote: Boolean!
+}
+
